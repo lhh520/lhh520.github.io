@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, LHH&#39;s Blog">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="操作系统, LHH&#39;s Blog">
+    <meta name="description" content="
+操作系统1 进程进程模型：每个系统有自己的虚拟CPU，但CPU又在不同进程之间进行切换。一个进程就是一个正在执行的程序，包括程序寄存器和变量当前的值。进程是某种类型的活动，它有程序。输入和输出以及状态。单个处理器可被若干进程共享，使用某种">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@
 
     
 
-    <title>Hello World | LHH&#39;s Blog</title>
+    <title>操作系统 | LHH&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -265,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">操作系统</h1>
                 </div>
             </div>
         </div>
@@ -384,9 +385,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -398,7 +403,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-07-13
+                    2020-12-20
                 </div>
                 
 
@@ -407,14 +412,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    73
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    7 Min
                 </div>
                 
 
@@ -429,19 +434,118 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <ul>
+<li><h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="1-进程"><a href="#1-进程" class="headerlink" title="1 进程"></a>1 进程</h2><p>进程模型：每个系统有自己的虚拟CPU，但CPU又在不同进程之间进行切换。一个进程就是一个正在执行的程序，包括程序寄存器和变量当前的值。<br>进程是某种类型的活动，它有程序。输入和输出以及状态。单个处理器可被若干进程共享，使用某种进程调度算法，决定何时停止一个进程的工作，并转而为另一个进程提供服务。<br>1.1进程的创建：系统初始化，正在运行的程序执行了创建进程的系统调用，用户请求创建一个新进程，一个批处理作业初始化。父进程（英语：Parent Process）指已创建一个或多个子进程的进程。<br>1.2进程的终止：正常退出，出错退出，严重错误，被其他进程杀死<br>1.3进程的层次结构：进程和它的所有子进程以及后裔共同组成一个进程组。<br>Linux是一个树结构 Windows中是地位相同，每个进程地位都是相等的，句柄标识父与子进程<br>1.4进程的状态：运行态 就绪态，阻塞态<br>运行态和就绪态是由调度程序引起的，<br>1.5进程的实现：</p>
+<h2 id="2-线程"><a href="#2-线程" class="headerlink" title="2.线程"></a>2.线程</h2><p>每个进程有一个进程空间和一个控制线程，在一个应用中也发生着许多活动。并行实体拥有共享同一个地址空间和所有可用数据的能力。进程比线程更轻量级，实现并行计算。<br>多个线程可以共享公共 内存，允许他们同时访问同一个文件夹，三个进程做不到。所有线程会有完全一样的内存空间<br>一个进程打开了文件，该文件对该进程中其他线程都可见<br>每个线程都有自己的堆栈<br>在用户空间中实现线程：内核对线程包一无所知，从内核角度考虑，但线程进程。用户级线程包可以在不支持线程的操作系统上实现。</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;pthread.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">define</span> NUMBER_OF_THREADS 10</span>
+<span class="token keyword">void</span> <span class="token operator">*</span><span class="token function">print_hello_world</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span>tid<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello World.Greeting from thread %d\n"</span><span class="token punctuation">,</span>tid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">pthread_exit</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    pthread_t threads<span class="token punctuation">[</span>NUMBER_OF_TH<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> status<span class="token punctuation">,</span>i<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>NUMBER_OF_THREADS<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<p>进程和线程有一个关键的差别：线程完成时，把线程信息保存在线程表中，调用线程带哦都程序来选择另一个要运行的线程。不需要陷入内核，不需要上下文切换。不需要对内存告诉缓存进行刷新。<br>某个程序调用或者跳转到了一条不存在的内存指令上，就会发生页面故障</p>
+<p>在内核中实现线程：</p>
+<h2 id="3-进程间通信"><a href="#3-进程间通信" class="headerlink" title="3.进程间通信"></a>3.进程间通信</h2><p>两个或多个进程写某些共享数据，最后结果取决于运行的精准时序，称为竞争条件<br>临界区：避免竞争条件需要的是互斥条件：确保某个进程在使用文件夹或者共享变量时候，其他进程不会进行同样的操作。共享内存进行访问的程序片段称为临界区域，适当安排，使得两个进程不可能同时处于临界区内，避免竞争条件。<br>忙等待的互斥：<br>1.屏蔽中断：每个进程刚进入临界区后立即屏蔽所有中断，并在就要离开之前再打开所有中断。CPU只有发生时钟中断时候才会进行进程切换，屏蔽后的CPU不会被切换到其他中断。缺点是对于多核处理器不能使用。</p>
+<p>2.锁变量：检查，如果内存被占用则设为1，反之为0，0表示临界区内没有进程。但可能会发生同时进入而造成竞争条件。<br>3.严格轮换法：<br>连续测试一个变量值直到某个值出现为止，称为忙等待<br>两个进程严格轮流进入临界区，</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">while</span><span class="token punctuation">(</span>TRUE<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>turn<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">critical_region</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+turn<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token function">noncritical_region</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<p>4.Peterson解法</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> FALSE 0</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> TRUE 1</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> N 2</span>
+<span class="token keyword">int</span> turn<span class="token punctuation">;</span>
+<span class="token keyword">int</span> interested<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">enter_region</span><span class="token punctuation">(</span><span class="token keyword">int</span> process<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> other<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//另一个进程号</span>
+other<span class="token operator">=</span><span class="token number">1</span><span class="token operator">-</span>process<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//另一个进程</span>
+interested<span class="token punctuation">[</span>process<span class="token punctuation">]</span><span class="token operator">=</span>TRUE<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//表示感兴趣</span>
+turn <span class="token operator">=</span>process<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//设置标志</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>turn<span class="token operator">==</span>process<span class="token operator">&amp;&amp;</span>interested<span class="token punctuation">[</span>other<span class="token punctuation">]</span><span class="token operator">==</span>TRUE<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//空语句</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">leave_region</span><span class="token punctuation">(</span><span class="token keyword">int</span> process<span class="token punctuation">)</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    interested<span class="token punctuation">[</span>process<span class="token punctuation">]</span><span class="token operator">=</span>FALSE<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
+<p>5.信号量</p>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\1603195016154.png" alt="1603195016154"></p>
+<ul>
+<li><p>在缓冲区为空时，消费者不能再进行消费</p>
+</li>
+<li><p>在缓冲区为满时，生产者不能再进行生产</p>
+</li>
+<li><p>在一个线程进行生产或消费时，其余线程不能再进行生产或消费等操作，即保持线程间的同步</p>
+</li>
+<li><p>注意条件变量与互斥锁的顺序</p>
+<p>​      因此需要保持线程间的同步，即一个线程消费（或生产）完，其他线程才能进行竞争CPU，获得消费（或生产）的机会。对于这一点，可以使用条件变量进行线程间的同步：生产者线程在product之前，需要wait直至获取自己所需的信号量之后，才会进行product的操作；同样，对于消费者线程，在consume之前需要wait直到没有线程在访问共享区（缓冲区），再进行consume的操作，之后再解锁并唤醒其他可用阻塞线程。</p>
+</li>
+</ul>
+<p><img src="C:\Users\123\AppData\Roaming\Typora\typora-user-images\1603195156901.png" alt="1603195156901"></p>
+<p>假设缓冲区大小为10，生产者、消费者线程若干。生产者和消费者相互等效,只要缓冲池未满,生产者便可将消息送入缓冲池;只要缓冲池未空,消费者便可从缓冲池中取走一个消息。</p>
+<ul>
+<li><p>items代表缓冲区已经使用的资源数，spaces代表缓冲区可用资源数</p>
+</li>
+<li><p>mutex代表互斥锁</p>
+</li>
+<li><p>buf[10] 代表缓冲区，其内容类型为item</p>
+</li>
+<li><p>in、out代表第一个资源和最后一个资源</p>
+<pre><code>var items = 0, space = 10, mutex = 1;
+var in = 0, out = 0;
+item buf[10] = &#123; NULL &#125;;
+
+producer &#123;
+    while( true ) &#123;
+        wait( space );  // 等待缓冲区有空闲位置， 在使用PV操作时，条件变量需要在互斥锁之前
+        wait( mutex );  // 保证在product时不会有其他线程访问缓冲区
+
+        // product
+        buf.push( item, in );  // 将新资源放到buf[in]位置 
+        in = ( in + 1 ) % 10;
+        
+        signal( mutex );  // 唤醒的顺序可以不同
+        signal( items );  // 通知consumer缓冲区有资源可以取走
+    &#125;
+&#125;
+
+consumer &#123;
+    while( true ) &#123;
+        wait( items );  // 等待缓冲区有资源可以使用
+        wait( mutex );  // 保证在consume时不会有其他线程访问缓冲区
+
+        // consume
+        buf.pop( out );  // 将buf[out]位置的的资源取走
+        out = ( out + 1 ) % 10;
+
+        signal( mutex );  // 唤醒的顺序可以不同
+        signal( space );  // 通知缓冲区有空闲位置
+    &#125;
+&#125;
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+</li>
+</ul>
+<p>6.调度<br>      有多个进程同时竞争CPU，只要有两个或更多的进程处于就绪状态，这种情况就会发生。完成选择工作的这一部分程序称为调度程序，使用的算法称为调度算法。<br>6.1先来先服务：<br>6.2最短作业优先<br>6.3最短剩余时间优先<br>交互式系统中的调度：<br>轮转调度 优先级调度 多级调度</p>
+<h1 id="2-内存管理"><a href="#2-内存管理" class="headerlink" title="2.内存管理"></a>2.内存管理</h1><h2 id="1-地址空间"><a href="#1-地址空间" class="headerlink" title="1.地址空间"></a>1.地址空间</h2><p>把物理地址暴露给进程会带来严重的问题：1.用户程序破坏操作系统，使得系统慢慢停止运行2.同时运行多个程序几乎不可能<br>多个程序同时处于内存中，不影响，需要 保护和重新定位<br>地址空间为程序创造了一种抽象的内存，地址空间是一个进程可用于寻址内存的一套地址集合。<br>基址寄存器与界限寄存器<br>交换技术：处理内存超载，将空闲进程存储在磁盘上。不运行时不会使用内存。分配额外内存<br>虚拟内存：每个进程有自己的进程空间，</p>
+</li>
+</ul>
 
                 
             </div>
@@ -468,7 +572,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/07/13/hello-world/">http://example.com/2022/07/13/hello-world/</a>
+                    <a href="http://example.com/2020/12/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">http://example.com/2020/12/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -505,7 +609,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -551,48 +659,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
-            <div class="card">
-                <a href="/2022/07/13/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            LHH
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
                 <a href="/2020/12/20/%E6%A0%87%E5%87%86Spring/">
                     <div class="card-image">
@@ -610,8 +679,53 @@
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            LHH
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/11/29/Spring/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Spring">
+                        
+                        <span class="card-title">Spring</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-29
                             </span>
                         <span class="publish-author">
                             
