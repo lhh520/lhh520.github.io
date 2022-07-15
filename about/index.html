@@ -332,7 +332,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">1</a></span>
+    <span class="count"><a href="/categories">5</a></span>
     <span class="name">Categories</span>
 </div>
 
@@ -362,7 +362,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">1</a></span>
+    <span class="count"><a href="/categories">5</a></span>
     <span class="name">Categories</span>
 </div>
 
@@ -547,7 +547,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Java","value":1}],
+                data: [{"name":"Java","value":5},{"name":"多线程","value":1},{"name":"读书笔记","value":1},{"name":"前端","value":1},{"name":"os","value":2}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -571,7 +571,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["spring","多线程","读书笔记","Mybatis","hello","操作系统","设计模式","前端"]
+                data: ["spring","多线程","读书笔记","Mybatis","前端","操作系统","设计模式","hello"]
             }
         ],
         yAxis: [
@@ -778,8 +778,8 @@
             
             
             
-            <a href="/tags/hello/">
-                <span class="chip center-align waves-effect waves-light chip-default">hello</span>
+            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                <span class="chip center-align waves-effect waves-light chip-default">前端</span>
             </a>
             
             
@@ -796,8 +796,8 @@
             
             
             
-            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                <span class="chip center-align waves-effect waves-light chip-default">前端</span>
+            <a href="/tags/hello/">
+                <span class="chip center-align waves-effect waves-light chip-default">hello</span>
             </a>
             
             
@@ -1114,6 +1114,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 鼠标星星特效 -->
