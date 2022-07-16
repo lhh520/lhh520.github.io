@@ -752,7 +752,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Java","value":5},{"name":"读书笔记","value":1},{"name":"多线程","value":1},{"name":"前端","value":1},{"name":"os","value":2}],
+                data: [{"name":"Java","value":5},{"name":"多线程","value":1},{"name":"读书笔记","value":1},{"name":"os","value":2},{"name":"前端","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -776,7 +776,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         xAxis: [
             {
                 type: 'category',
-                data: ["spring","多线程","读书笔记","Mybatis","hello","前端","操作系统","设计模式"]
+                data: ["spring","多线程","读书笔记","Mybatis","hello","操作系统","设计模式","前端"]
             }
         ],
         yAxis: [
@@ -988,12 +988,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/%E5%89%8D%E7%AB%AF/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">前端</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">操作系统</span>
             </a>
@@ -1002,6 +996,12 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">设计模式</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%89%8D%E7%AB%AF/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">前端</span>
             </a>
             
             
@@ -1030,7 +1030,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <li><b>待更……</b></li>
 </ul>
 <h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><ul>
-<li><b>电子邮箱</b><br><a href="mailto:&#57;&#52;&#x38;&#56;&#x34;&#48;&#55;&#x35;&#49;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#109;">&#57;&#52;&#x38;&#56;&#x34;&#48;&#55;&#x35;&#49;&#64;&#113;&#113;&#x2e;&#x63;&#111;&#109;</a></li>
+<li><b>电子邮箱</b><br><a href="mailto:&#57;&#52;&#x38;&#x38;&#52;&#x30;&#55;&#x35;&#49;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;">&#57;&#52;&#x38;&#x38;&#52;&#x30;&#55;&#x35;&#49;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;</a></li>
 <li><b>地址</b><br>成都市高新区（西区）西源大道2006号科研大楼，邮编611731   </li>
 <li><b>QQ</b><br>948840751</li>
 </ul>
@@ -1068,7 +1068,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">47.9k</span> 字
+                <span class="white-color">45.2k</span> 字
             
 
             
@@ -1209,7 +1209,7 @@ $(function () {
             var OriginTitile = document.title,
                 st;
             document.addEventListener("visibilitychange", function () {
-                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                document.hidden ? (document.title = "LHH's Blog", clearTimeout(st)) : (document.title =
                     "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
                         document.title = OriginTitile
                     }, 3e3))
@@ -1250,38 +1250,6 @@ $(function () {
         
 
         <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
-        
-            <script src="//code.tidio.co/xxxxxxxxxxxxxxxxxxxxxxxxxxx.js"></script>
-            <!--  在线聊天位置自定义  洪卫 shw2018 add 2019.09.13  -->
-            <script> 
-                $(document).ready(function () {
-
-                    setInterval(change_Tidio, 50);  
-                    function change_Tidio() { 
-
-                        var tidio=$("#tidio-chat iframe");
-                        if(tidio.css("display")=="block"&& $(window).width()>977 ){
-                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"80px":"20px";   
-                            document.getElementById("tidio-chat-iframe").style.right="-15px";   
-                            document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
-                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
-                        } 
-                        else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
-                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
-                            document.getElementById("tidio-chat-iframe").style.right="-15px"; 
-                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
-                        }
-                        else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
-                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
-                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
-                        }
-
-                        if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
-                            document.getElementById("tidio-chat-iframe").style.zIndex="998";
-                        }
-                    } 
-                }); 
-            </script>
         
 
         <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->

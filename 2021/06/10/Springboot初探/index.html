@@ -649,14 +649,14 @@ protected List&amp;lt;String&gt; getCandidateConfigurations(AnnotationMetadata m
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>Word Count:&nbsp;&nbsp;
-                        3.6k
+                        3.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>Read Times:&nbsp;&nbsp;
-                        17 Min
+                        15 Min
                     </div>
                     
                 
@@ -681,11 +681,11 @@ protected List&amp;lt;String&gt; getCandidateConfigurations(AnnotationMetadata m
 <span class="token number">12</span>
 </code></pre>
 <p>获取候选配置：</p>
-<pre class=" language-java"><code class="language-java">    <span class="token keyword">protected</span> List<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">getCandidateConfigurations</span><span class="token punctuation">(</span>AnnotationMetadata metadata<span class="token punctuation">,</span> AnnotationAttributes attributes<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java">    <span class="token keyword">protected</span> List<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">getCandidateConfigurations</span><span class="token punctuation">(</span>AnnotationMetadata metadata<span class="token punctuation">,</span> AnnotationAttributes attributes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         List<span class="token operator">&lt;</span>String<span class="token operator">></span> configurations <span class="token operator">=</span> SpringFactoriesLoader<span class="token punctuation">.</span><span class="token function">loadFactoryNames</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getSpringFactoriesLoaderFactoryClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getBeanClassLoader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         Assert<span class="token punctuation">.</span><span class="token function">notEmpty</span><span class="token punctuation">(</span>configurations<span class="token punctuation">,</span> <span class="token string">"No auto configuration classes found in META-INF/spring.factories. If you are using a custom packaging, make sure that file is correct."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> configurations<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 <span class="token number">12345</span>
 </code></pre>
 </li>
@@ -770,20 +770,20 @@ mybatis:
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
 <span class="token annotation punctuation">@AllArgsConstructor</span>
 <span class="token annotation punctuation">@NoArgsConstructor</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> id<span class="token punctuation">;</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> String password<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token number">12345678</span>
 </code></pre>
 </li>
 <li><p>UserMapper接口</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Repository</span>
 <span class="token annotation punctuation">@Mapper</span>
-<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserMapper</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserMapper</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> User <span class="token function">queryUserByName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token number">12345</span>
 </code></pre>
 </li>
@@ -791,7 +791,7 @@ mybatis:
 <pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--namespace=绑定一个指定的Dao/Mapper接口--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mapper</span> <span class="token attr-name">namespace</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.kuang.mapper.UserMapper<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>getUserList<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>com.kuang.pojo.User<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>String<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    select * from USER where name = #<span class="token entity" title="&#123;">&amp;#123;</span>name<span class="token entity" title="&#125;">&amp;#125;</span>
+    select * from USER where name = #{name}
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mapper</span><span class="token punctuation">></span></span>
 123456
@@ -804,22 +804,22 @@ mybatis:
 <li><p>service层调用dao层</p>
 <ul>
 <li><p>UserService 接口</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> User <span class="token function">queryUserByName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token number">123</span>
 </code></pre>
 </li>
 <li><p>UserServiceImpl实现类</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span><span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Autowired</span>
     UserMapper mapper<span class="token punctuation">;</span>
-    <span class="token keyword">public</span> User <span class="token function">queryUserByName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> User <span class="token function">queryUserByName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         User user <span class="token operator">=</span> mapper<span class="token punctuation">.</span><span class="token function">queryUserByName</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> user<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span class="token number">123456789</span>
 </code></pre>
 </li>
@@ -828,9 +828,9 @@ mybatis:
 <li><p>controller调用service层</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
 UserServiceImpl userService<span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">mian</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">mian</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     User user <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">queryUserByName</span><span class="token punctuation">(</span><span class="token string">"dog"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token number">12345</span>
 </code></pre>
 </li>
@@ -848,12 +848,12 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 </ul>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//AOP : 拦截器</span>
 <span class="token annotation punctuation">@EnableWebSecurity</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SecurityConfig</span> <span class="token keyword">extends</span> <span class="token class-name">WebSecurityConfigurerAdapter</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SecurityConfig</span> <span class="token keyword">extends</span> <span class="token class-name">WebSecurityConfigurerAdapter</span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">// 链式编程</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token comment" spellcheck="true">//授权</span>
-    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">configure</span><span class="token punctuation">(</span>HttpSecurity http<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">configure</span><span class="token punctuation">(</span>HttpSecurity http<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//首页所有人可以访问，功能页只有对应有权限的人才能访问</span>
         <span class="token comment" spellcheck="true">//请求授权的规则</span>
         http<span class="token punctuation">.</span><span class="token function">authorizeRequests</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -874,11 +874,11 @@ UserServiceImpl userService<span class="token punctuation">;</span>
         http<span class="token punctuation">.</span><span class="token function">logout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">logoutSuccessUrl</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//开启记住我功能</span>
         http<span class="token punctuation">.</span><span class="token function">rememberMe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rememberMeParameter</span><span class="token punctuation">(</span><span class="token string">"rememberme"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">//认证</span>
     <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">configure</span><span class="token punctuation">(</span>AuthenticationManagerBuilder auth<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">configure</span><span class="token punctuation">(</span>AuthenticationManagerBuilder auth<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
    <span class="token comment" spellcheck="true">//在内存中定义，也可以在jdbc中去拿....</span>
    <span class="token comment" spellcheck="true">//Spring security 5.0中新增了多种加密方式，也改变了密码的格式。</span>
    <span class="token comment" spellcheck="true">//要想我们的项目还能够正常登陆，需要修改一下configure中的代码。我们要将前端传过来的密码进行某种方式加密</span>
@@ -890,8 +890,8 @@ UserServiceImpl userService<span class="token punctuation">;</span>
                 <span class="token punctuation">.</span><span class="token function">withUser</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">password</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BCryptPasswordEncoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span><span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">roles</span><span class="token punctuation">(</span><span class="token string">"vip1"</span><span class="token punctuation">,</span><span class="token string">"vip2"</span><span class="token punctuation">,</span><span class="token string">"vip3"</span><span class="token punctuation">)</span>
                 <span class="token punctuation">.</span><span class="token function">and</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
                 <span class="token punctuation">.</span><span class="token function">withUser</span><span class="token punctuation">(</span><span class="token string">"guest"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">password</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">BCryptPasswordEncoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">encode</span><span class="token punctuation">(</span><span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">roles</span><span class="token punctuation">(</span><span class="token string">"vip1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span class="token number">12345678910111213141516171819202122232425262728293031323334353637383940414243444546</span>
 </code></pre>
 </li>
@@ -913,50 +913,50 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 </li>
 <li><p>编写Shiro配置类</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShrioConfig</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShrioConfig</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//ShiroFilterFactoryBean : Step3</span>
     <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> ShiroFilterFactoryBean <span class="token function">getShrioFilterFactoryBean</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"securityManager"</span><span class="token punctuation">)</span> DefaultWebSecurityManager defaultWebSecurityManager<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> ShiroFilterFactoryBean <span class="token function">getShrioFilterFactoryBean</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"securityManager"</span><span class="token punctuation">)</span> DefaultWebSecurityManager defaultWebSecurityManager<span class="token punctuation">)</span><span class="token punctuation">{</span>
         ShiroFilterFactoryBean bean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ShiroFilterFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//设置安全管理器</span>
         bean<span class="token punctuation">.</span><span class="token function">setSecurityManager</span><span class="token punctuation">(</span>defaultWebSecurityManager<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> bean<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     
     <span class="token comment" spellcheck="true">//DefaultWebSecurityManager : Step2</span>
     <span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span><span class="token string">"securityManager"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> DefaultWebSecurityManager <span class="token function">getDefaultWebSecurityManager</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"userRealm"</span><span class="token punctuation">)</span> UserRealm userRealm<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> DefaultWebSecurityManager <span class="token function">getDefaultWebSecurityManager</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"userRealm"</span><span class="token punctuation">)</span> UserRealm userRealm<span class="token punctuation">)</span><span class="token punctuation">{</span>
         DefaultWebSecurityManager securityManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultWebSecurityManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//关联userRealm</span>
         securityManager<span class="token punctuation">.</span><span class="token function">setRealm</span><span class="token punctuation">(</span>userRealm<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> securityManager<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     
     <span class="token comment" spellcheck="true">//创建 realm 对象, 需要自定义类：Step1</span>
     <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> UserRealm <span class="token function">userRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> UserRealm <span class="token function">userRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">UserRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span class="token number">1234567891011121314151617181920212223242526</span>
 </code></pre>
 </li>
 <li><p>自定义UserRealm</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//自定义的 UserRealm</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">//授权</span>
     <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">protected</span> AuthorizationInfo <span class="token function">doGetAuthorizationInfo</span><span class="token punctuation">(</span>PrincipalCollection principalCollection<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">protected</span> AuthorizationInfo <span class="token function">doGetAuthorizationInfo</span><span class="token punctuation">(</span>PrincipalCollection principalCollection<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">//认证</span>
     <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">protected</span> AuthenticationInfo <span class="token function">doGetAuthenticationInfo</span><span class="token punctuation">(</span>AuthenticationToken authenticationToken<span class="token punctuation">)</span> <span class="token keyword">throws</span> AuthenticationException <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">protected</span> AuthenticationInfo <span class="token function">doGetAuthenticationInfo</span><span class="token punctuation">(</span>AuthenticationToken authenticationToken<span class="token punctuation">)</span> <span class="token keyword">throws</span> AuthenticationException <span class="token punctuation">{</span>
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span class="token number">123456789101112131415</span>
 </code></pre>
 </li>
@@ -1072,11 +1072,11 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 </li>
 <li><p>编写Shiro配置类</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShrioConfig</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ShrioConfig</span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">//ShiroFilterFactoryBean : Step3</span>
     <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> ShiroFilterFactoryBean <span class="token function">getShrioFilterFactoryBean</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"securityManager"</span><span class="token punctuation">)</span> DefaultWebSecurityManager defaultWebSecurityManager<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> ShiroFilterFactoryBean <span class="token function">getShrioFilterFactoryBean</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"securityManager"</span><span class="token punctuation">)</span> DefaultWebSecurityManager defaultWebSecurityManager<span class="token punctuation">)</span><span class="token punctuation">{</span>
         ShiroFilterFactoryBean bean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ShiroFilterFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//设置安全管理器</span>
         bean<span class="token punctuation">.</span><span class="token function">setSecurityManager</span><span class="token punctuation">(</span>defaultWebSecurityManager<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1107,42 +1107,42 @@ UserServiceImpl userService<span class="token punctuation">;</span>
         bean<span class="token punctuation">.</span><span class="token function">setUnauthorizedUrl</span><span class="token punctuation">(</span><span class="token string">"/noauth"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         bean<span class="token punctuation">.</span><span class="token function">setFilterChainDefinitionMap</span><span class="token punctuation">(</span>filterMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> bean<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">//DefaultWebSecurityManager : Step2</span>
     <span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span><span class="token string">"securityManager"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> DefaultWebSecurityManager <span class="token function">getDefaultWebSecurityManager</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"userRealm"</span><span class="token punctuation">)</span> UserRealm userRealm<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> DefaultWebSecurityManager <span class="token function">getDefaultWebSecurityManager</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Qualifier</span><span class="token punctuation">(</span><span class="token string">"userRealm"</span><span class="token punctuation">)</span> UserRealm userRealm<span class="token punctuation">)</span><span class="token punctuation">{</span>
         DefaultWebSecurityManager securityManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultWebSecurityManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//关联userRealm</span>
         securityManager<span class="token punctuation">.</span><span class="token function">setRealm</span><span class="token punctuation">(</span>userRealm<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> securityManager<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">//创建 realm 对象, 需要自定义类：Step1</span>
     <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> UserRealm <span class="token function">userRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> UserRealm <span class="token function">userRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">UserRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">//整合 ShiroDialect:用来整合shiro thymeleaf</span>
     <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> ShiroDialect <span class="token function">getShiroDialect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> ShiroDialect <span class="token function">getShiroDialect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ShiroDialect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span class="token number">1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859</span>
 </code></pre>
 </li>
 <li><p>自定义UserRealm</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//自定义的 UserRealm</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Autowired</span>
     UserServiceImpl userService<span class="token punctuation">;</span>
 
     <span class="token comment" spellcheck="true">//授权</span>
     <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">protected</span> AuthorizationInfo <span class="token function">doGetAuthorizationInfo</span><span class="token punctuation">(</span>PrincipalCollection principalCollection<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">protected</span> AuthorizationInfo <span class="token function">doGetAuthorizationInfo</span><span class="token punctuation">(</span>PrincipalCollection principalCollection<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"执行了 => doGetAuthorizationInfo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         SimpleAuthorizationInfo info <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleAuthorizationInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1155,20 +1155,20 @@ UserServiceImpl userService<span class="token punctuation">;</span>
         info<span class="token punctuation">.</span><span class="token function">addStringPermission</span><span class="token punctuation">(</span>currentUser<span class="token punctuation">.</span><span class="token function">getPerms</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token keyword">return</span> info<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">//认证</span>
     <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">protected</span> AuthenticationInfo <span class="token function">doGetAuthenticationInfo</span><span class="token punctuation">(</span>AuthenticationToken authenticationToken<span class="token punctuation">)</span> <span class="token keyword">throws</span> AuthenticationException <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">protected</span> AuthenticationInfo <span class="token function">doGetAuthenticationInfo</span><span class="token punctuation">(</span>AuthenticationToken authenticationToken<span class="token punctuation">)</span> <span class="token keyword">throws</span> AuthenticationException <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"执行了 => 认证AuthenticationToken"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         UsernamePasswordToken userToken <span class="token operator">=</span> <span class="token punctuation">(</span>UsernamePasswordToken<span class="token punctuation">)</span> authenticationToken<span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//连接真实的数据库</span>
         User user <span class="token operator">=</span> userService<span class="token punctuation">.</span><span class="token function">queryUserByName</span><span class="token punctuation">(</span>userToken<span class="token punctuation">.</span><span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>user <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>user <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
             <span class="token comment" spellcheck="true">//没有这个人</span>
             <span class="token keyword">return</span> null<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//抛出异常 UnknownAccountException</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
         <span class="token comment" spellcheck="true">// 登录成功 将用户信息存入session</span>
         Subject currentSubject <span class="token operator">=</span> SecurityUtils<span class="token punctuation">.</span><span class="token function">getSubject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1177,8 +1177,8 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 
         <span class="token comment" spellcheck="true">// 密码认证，shiro做</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">SimpleAuthenticationInfo</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span>user<span class="token punctuation">.</span><span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span class="token number">123456789101112131415161718192021222324252627282930313233343536373839404142434445</span>
 </code></pre>
 </li>
@@ -1231,9 +1231,9 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 <li><p>配置Swagger &#x3D;&#x3D;&gt; Config</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
 <span class="token annotation punctuation">@EnableSwagger2</span> <span class="token comment" spellcheck="true">//开启Swagger</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SwaggerConfig</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SwaggerConfig</span> <span class="token punctuation">{</span>
   
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token number">12345</span>
 </code></pre>
 </li>
@@ -1242,15 +1242,15 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 </ol>
 <h3 id="三、-配置Swagger信息"><a href="#三、-配置Swagger信息" class="headerlink" title="三、 配置Swagger信息"></a>三、 <strong>配置Swagger</strong>信息</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
 <span class="token annotation punctuation">@EnableSwagger2</span> <span class="token comment" spellcheck="true">//开启Swagger</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SwaggerConfig</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SwaggerConfig</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//配置了Swagger 的Docket的bean实例</span>
     <span class="token annotation punctuation">@Bean</span>
-    <span class="token keyword">public</span> Docket <span class="token function">docket</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Docket <span class="token function">docket</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Docket</span><span class="token punctuation">(</span>DocumentationType<span class="token punctuation">.</span>SWAGGER_2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">apiInfo</span><span class="token punctuation">(</span><span class="token function">apiInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     
     <span class="token comment" spellcheck="true">//配置Swagger信息=apiInfo</span>
-    <span class="token keyword">public</span> ApiInfo <span class="token function">apiInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> ApiInfo <span class="token function">apiInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//作者信息</span>
         Contact contact <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Contact</span><span class="token punctuation">(</span><span class="token string">"Daniel"</span><span class="token punctuation">,</span><span class="token string">"https://www.baidu.com"</span><span class="token punctuation">,</span><span class="token string">"denglianqing@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ApiInfo</span><span class="token punctuation">(</span><span class="token string">"Dainel的SwaggerAPI文档"</span><span class="token punctuation">,</span>
@@ -1260,14 +1260,14 @@ UserServiceImpl userService<span class="token punctuation">;</span>
                 contact<span class="token punctuation">,</span> <span class="token string">"Apache 2.0"</span><span class="token punctuation">,</span>
                 <span class="token string">"http://www.apache.org/licenses/LICENSE-2.0"</span><span class="token punctuation">,</span>
                 <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span class="token number">12345678910111213141516171819202122</span>
 </code></pre>
 <h3 id="四、-Swagger配置扫描接口"><a href="#四、-Swagger配置扫描接口" class="headerlink" title="四、 Swagger配置扫描接口"></a>四、 Swagger配置扫描接口</h3><p><strong>Docket.select（）</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//配置了Swagger 的Docket的bean实例</span>
 <span class="token annotation punctuation">@Bean</span>
-<span class="token keyword">public</span> Docket <span class="token function">docket</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> Docket <span class="token function">docket</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Docket</span><span class="token punctuation">(</span>DocumentationType<span class="token punctuation">.</span>SWAGGER_2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">apiInfo</span><span class="token punctuation">(</span><span class="token function">apiInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token comment" spellcheck="true">//RequestHandlerSelectors,配置要扫描接口的方式</span>
@@ -1276,7 +1276,7 @@ UserServiceImpl userService<span class="token punctuation">;</span>
         <span class="token punctuation">.</span><span class="token function">apis</span><span class="token punctuation">(</span>RequestHandlerSelectors<span class="token punctuation">.</span><span class="token function">basePackage</span><span class="token punctuation">(</span><span class="token string">"com.kuang.swagger.controller"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">paths</span><span class="token punctuation">(</span>PathSelectors<span class="token punctuation">.</span><span class="token function">ant</span><span class="token punctuation">(</span><span class="token string">"/kuang/**"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token number">123456789101112</span>
 </code></pre>
 <blockquote>
@@ -1288,14 +1288,14 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 </blockquote>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//配置了Swagger 的Docket的bean实例</span>
 <span class="token annotation punctuation">@Bean</span>
-<span class="token keyword">public</span> Docket <span class="token function">docket</span><span class="token punctuation">(</span>Environment environment<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> Docket <span class="token function">docket</span><span class="token punctuation">(</span>Environment environment<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">//设置要显示的Swagger环境</span>
     Profiles profiles <span class="token operator">=</span> Profiles<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token string">"dev"</span><span class="token punctuation">,</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//通过  environment.acceptsProfiles 判断是否处在自己设定的环境中</span>
     <span class="token keyword">boolean</span> flag <span class="token operator">=</span> environment<span class="token punctuation">.</span><span class="token function">acceptsProfiles</span><span class="token punctuation">(</span>profiles<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token number">12345678910</span>
 </code></pre>
 <p><img src="https://edu-11144.oss-cn-beijing.aliyuncs.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70-20220714213406277.png" alt="[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-FZX3xgNm-1594913883200)(D:\我\MyBlog\狂神说 SpringBoot.assets\image-20200715113453865.png)]"></p>
@@ -1315,28 +1315,28 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 <h2 id="九、任务"><a href="#九、任务" class="headerlink" title="九、任务"></a>九、任务</h2><h3 id="一、异步任务"><a href="#一、异步任务" class="headerlink" title="一、异步任务"></a>一、异步任务</h3><ol>
 <li><p>给要实现异步任务加上注解 <strong>@Async</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AsyncService</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AsyncService</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Async</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
             Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"数据正在处理..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span class="token number">123456789101112</span>
 </code></pre>
 </li>
 <li><p>在main方法开启异步功能 <strong>@EnableAsync</strong></p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@EnableAsync</span> <span class="token comment" spellcheck="true">// 开启异步注解功能</span>
 <span class="token annotation punctuation">@SpringBootApplication</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Springboot09TaskApplication</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Springboot09TaskApplication</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>Springboot09TaskApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span class="token number">1234567</span>
 </code></pre>
 </li>
@@ -1361,13 +1361,13 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 </li>
 <li><p>测试发送邮件(组合邮件，带附件)</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootTest</span>
-<span class="token keyword">class</span> <span class="token class-name">Springboot09TaskApplicationTests</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Springboot09TaskApplicationTests</span> <span class="token punctuation">{</span>
 
     <span class="token annotation punctuation">@Autowired</span>
     JavaMailSenderImpl mailSender<span class="token punctuation">;</span>
 
     <span class="token annotation punctuation">@Test</span>
-    <span class="token keyword">void</span> <span class="token function">contextLoads2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">contextLoads2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> MessagingException <span class="token punctuation">{</span>
 
         <span class="token comment" spellcheck="true">//一个复杂的邮件</span>
         MimeMessage mimeMessage <span class="token operator">=</span> mailSender<span class="token punctuation">.</span><span class="token function">createMimeMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1383,7 +1383,7 @@ UserServiceImpl userService<span class="token punctuation">;</span>
         helper<span class="token punctuation">.</span><span class="token function">setFrom</span><span class="token punctuation">(</span><span class="token string">"514906666@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         mailSender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>mimeMessage<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 <span class="token number">123456789101112131415161718192021222324</span>
 </code></pre>
 </li>
@@ -1400,7 +1400,7 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 <ol>
 <li><p>编写定时服务</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ScheduledService</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ScheduledService</span> <span class="token punctuation">{</span>
 
     <span class="token comment" spellcheck="true">//在一个特定的时间执行这个方法</span>
 
@@ -1413,11 +1413,11 @@ UserServiceImpl userService<span class="token punctuation">;</span>
     */</span>
 
     <span class="token annotation punctuation">@Scheduled</span><span class="token punctuation">(</span>cron <span class="token operator">=</span> <span class="token string">"30 17 17 * * ?"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello,被执行了!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 <span class="token number">12345678910111213141516171819</span>
 </code></pre>
 </li>
@@ -1425,11 +1425,11 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@EnableAsync</span> <span class="token comment" spellcheck="true">// 开启异步注解功能</span>
 <span class="token annotation punctuation">@EnableScheduling</span> <span class="token comment" spellcheck="true">//开启定时功能的注解</span>
 <span class="token annotation punctuation">@SpringBootApplication</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Springboot09TaskApplication</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Springboot09TaskApplication</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>Springboot09TaskApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 <span class="token number">12345678</span>
 </code></pre>
 </li>
@@ -1481,130 +1481,6 @@ UserServiceImpl userService<span class="token punctuation">;</span>
             <hr/>
 
             
-            <style>
-    #reward {
-        margin: 40px 0;
-        text-align: center;
-    }
-
-    #reward .reward-link {
-        font-size: 1.88rem;
-    }
-
-    #reward .btn-floating:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #rewardModal {
-        width: 320px;
-        height: 350px;
-    }
-
-    #rewardModal .reward-title {
-        margin: 15px auto;
-        padding-bottom: 5px;
-    }
-
-    #rewardModal .modal-content {
-        padding: 10px;
-    }
-
-    #rewardModal .close {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: rgba(0, 0, 0, 0.5);
-        font-size: 1.3rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-
-    #rewardModal .close:hover {
-        color: #ef5350;
-        transform: scale(1.3);
-        -moz-transform:scale(1.3);
-        -webkit-transform:scale(1.3);
-        -o-transform:scale(1.3);
-    }
-
-    #rewardModal .reward-tabs {
-        margin: 0 auto;
-        width: 210px;
-    }
-
-    .reward-tabs .tabs {
-        height: 38px;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-
-    .reward-content ul {
-        padding-left: 0 !important;
-    }
-
-    .reward-tabs .tabs .tab {
-        height: 38px;
-        line-height: 38px;
-    }
-
-    .reward-tabs .tab a {
-        color: #fff;
-        background-color: #ccc;
-    }
-
-    .reward-tabs .tab a:hover {
-        background-color: #ccc;
-        color: #fff;
-    }
-
-    .reward-tabs .wechat-tab .active {
-        color: #fff !important;
-        background-color: #22AB38 !important;
-    }
-
-    .reward-tabs .alipay-tab .active {
-        color: #fff !important;
-        background-color: #019FE8 !important;
-    }
-
-    .reward-tabs .reward-img {
-        width: 210px;
-        height: 210px;
-    }
-</style>
-
-<div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fa fa-close"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力!</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.bmp" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.bmp" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(function () {
-        $('.tabs').tabs();
-    });
-</script>
-            
 
             <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 
@@ -1634,28 +1510,6 @@ UserServiceImpl userService<span class="token punctuation">;</span>
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div id="gitalk-container" class="card-content"></div>
-</div>
-
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-        clientSecret: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-        repo: 'shw2018.github.io',
-        owner: 'shw2018',
-        admin: ["shw2018"],
-        id: '2021/06/10/Springboot初探/',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-
-    gitalk.render('gitalk-container');
-</script>
-    
 
     
 
@@ -1663,304 +1517,6 @@ UserServiceImpl userService<span class="token punctuation">;</span>
 
     
 
-    
-        <style>
-    .valine-card {
-        margin: 1.5rem auto;
-    }
-
-    .valine-card .card-content {
-        padding: 20px 20px 5px 20px;
-    }
-    /* valine 评论框增加背景图片 */
-    #vcomments textarea {
-        box-sizing: border-box;
-        background: url("") 100% 100% no-repeat;
-    }
-
-    #vcomments input[type=text],
-    #vcomments input[type=email],
-    #vcomments input[type=url],
-    #vcomments textarea {
-        box-sizing: border-box;
-    }
-
-    #vcomments p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-
-    #vcomments blockquote p {
-        text-indent: 0.2rem;
-    }
-
-    #vcomments a {
-        padding: 0 2px;
-        color: #42b983;
-        font-weight: 500;
-        text-decoration: underline;
-    }
-
-    #vcomments img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    #vcomments ol li {
-        list-style-type: decimal;
-    }
-
-    #vcomments ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-
-    #vcomments ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-
-    #vcomments ul li {
-        list-style-type: disc;
-    }
-
-    #vcomments ul ul li {
-        list-style-type: circle;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    #vcomments table, th, td {
-        border: 0;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-
-    #vcomments h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-
-    #vcomments h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-
-    #vcomments h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    #vcomments h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-
-    #vcomments h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    #vcomments p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    #vcomments hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    #vcomments blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-
-    #vcomments pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-
-    #vcomments code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-
-    #vcomments pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-
-    #vcomments pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-
-    #vcomments code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    #vcomments b,
-    strong {
-        font-weight: bold;
-    }
-
-    #vcomments dfn {
-        font-style: italic;
-    }
-
-    #vcomments small {
-        font-size: 85%;
-    }
-
-    #vcomments cite {
-        font-style: normal;
-    }
-
-    #vcomments mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    /* 修复评论第一行位置错位 */
-    .v .vlist .vcard {
-    padding-top: 2.5em !important ;
-    }
-</style>
-
-<div class="card valine-card" data-aos="fade-up">
-    <div id="vcomments" class="card-content"></div>
-</div>
-
-<script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
-<!-- <link rel="stylesheet" type="text/css" href="/libs//libs/jQuery-emoji/dist/css/jquery.emoji.css">
-<script src="/libs//libs/jQuery-emoji/dist/js/jquery.emoji.min.js"></script>
-<script src="/libs//libs/jQuery-emoji/dist/js/emoji.list.js"></script> -->
-<script>
-    new Valine({
-        el: '#vcomments',
-        appId: 'XXXXXXXXXXXXXXXXXXXXXXXX',
-        appKey: 'XXXXXXXXXXXXXXXXXXXXXX',
-        notify: 'true' === 'true',
-        verify: 'true' === 'true',
-        visitor: 'true' === 'true',
-        avatar: 'mm',
-        pageSize: '10',
-        lang: 'en',
-        placeholder: 'just go go',
-
-    });
-
-//     function parse_emoji() {
-//     jQuery(".vcontent").emojiParse({
-//       basePath: '/libs/jQuery-emoji/images/emoji',
-//       icons: emojiLists   // 注：详见 js/emoji.list.js
-//     });
-//   }
-  
-//   setTimeout(function() {
-//     // jQuery emoji 解析
-//     parse_emoji();
-//     // jquery emoji 初始化
-//     jQuery(".veditor").emoji({
-//       showTab: true,
-//       animation: 'slide',
-//       basePath: '/libs/jQuery-emoji/images/emoji',
-//       icons: emojiLists  // 注：详见 js/emoji.list.js
-//     });
-//     jQuery(".vmore").on("click", function() {
-//       setTimeout(function() {
-//         parse_emoji();
-//       }, 500);
-//     });
-//   }, 800)
-
-</script>
     
 
     
@@ -2237,7 +1793,7 @@ protected List&lt;String> getCandidateConfigurations(AnnotationMetadata metadata
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">47.9k</span> 字
+                <span class="white-color">45.2k</span> 字
             
 
             
@@ -2378,7 +1934,7 @@ $(function () {
             var OriginTitile = document.title,
                 st;
             document.addEventListener("visibilitychange", function () {
-                document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title =
+                document.hidden ? (document.title = "LHH's Blog", clearTimeout(st)) : (document.title =
                     "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () {
                         document.title = OriginTitile
                     }, 3e3))
@@ -2419,38 +1975,6 @@ $(function () {
         
 
         <!-- 在线聊天工具  洪卫 shw2018 add 2019.09.11 -->
-        
-            <script src="//code.tidio.co/xxxxxxxxxxxxxxxxxxxxxxxxxxx.js"></script>
-            <!--  在线聊天位置自定义  洪卫 shw2018 add 2019.09.13  -->
-            <script> 
-                $(document).ready(function () {
-
-                    setInterval(change_Tidio, 50);  
-                    function change_Tidio() { 
-
-                        var tidio=$("#tidio-chat iframe");
-                        if(tidio.css("display")=="block"&& $(window).width()>977 ){
-                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"80px":"20px";   
-                            document.getElementById("tidio-chat-iframe").style.right="-15px";   
-                            document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
-                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
-                        } 
-                        else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
-                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;   
-                            document.getElementById("tidio-chat-iframe").style.right="-15px"; 
-                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
-                        }
-                        else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
-                            document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;   
-                            document.getElementById("tidio-chat-iframe").style.zIndex="997";
-                        }
-
-                        if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
-                            document.getElementById("tidio-chat-iframe").style.zIndex="998";
-                        }
-                    } 
-                }); 
-            </script>
         
 
         <!-- 背景 canvas-nest  洪卫 shw 2018  add 2019.09.15-->
