@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>LHH的简历</title>
-      <link href="/2022/04/27/%E7%AE%80%E5%8E%86/"/>
-      <url>/2022/04/27/%E7%AE%80%E5%8E%86/</url>
-      
-        <content type="html"><![CDATA[ <center>     <h1>李合会</h1> </center><h4 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h4><table><thead><tr><th><strong>姓名</strong>：李合会</th><th><strong>性别</strong>：男</th></tr></thead><tbody><tr><td><strong>出生</strong>：1998.3</td><td><strong>学历</strong>：硕士</td></tr><tr><td><strong>手机</strong>：15801028575</td><td><strong>邮箱</strong>：<a href="mailto:&#x6c;&#x69;&#x68;&#101;&#x68;&#x75;&#x69;&#50;&#x30;&#x31;&#54;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#111;&#109;">&#x6c;&#x69;&#x68;&#101;&#x68;&#x75;&#x69;&#50;&#x30;&#x31;&#54;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#111;&#109;</a></td></tr><tr><td><strong>籍贯</strong>：河南济源</td><td><strong>求职意向</strong>：Java开发工程师</td></tr></tbody></table><h4 id="学习经历"><a href="#学习经历" class="headerlink" title="学习经历"></a>学习经历</h4><table><thead><tr><th align="left">时间</th><th>学校</th><th>学院</th><th>专业</th></tr></thead><tbody><tr><td align="left">2020.9—2023.6.</td><td>哈尔滨工程大学</td><td>智能科学与控制学院</td><td>仪器科学与技术</td></tr><tr><td align="left">2016.8.—2020.6.</td><td>中国石油大学（北京）</td><td>信息工程学院</td><td>自动化 计算机科学与技术（双学位）</td></tr></tbody></table><h2 id="实习经历"><a href="#实习经历" class="headerlink" title="实习经历"></a>实习经历</h2><p><strong>2021.03-2021.04</strong>  <strong>哈尔滨船舶导航有限公司</strong></p><p>负责某电子海图软件的维护并对其代码进行学习与升级</p><p><strong>2021.11-2022.03</strong>   <strong>京东集团京东零售</strong></p><p>参与京东直播相关的业务，主要负责直播鉴权</p><h2 id="专业技能"><a href="#专业技能" class="headerlink" title="专业技能"></a>专业技能</h2><p>l ﻿ 熟悉Java语法,理解Java面向对象编程思想,熟练使用常用数据结构,具备良好的编码习惯。</p><p>l ﻿对JVM的原理有初步的了解,包括内存模型,垃圾回收机制等。</p><p>l ﻿了解JUC,熟悉Java多线程,以及多线程锁,线程池等技术。</p><p>l ﻿熟悉MySQL关系数据库的基本操作,了解MySQL调优技术以及Redis基本使用等。</p><p>l ﻿熟悉Linux环境,了解Linux 操作系统内存管理,进程通信等知识。</p><p>l ﻿了解Spring、SpringMVC、SpringBoot、Mybatis等开源框架,理解Spring中的 IOC, AOP等以及Mybatis逆向工程技术,了解 Swagger、Junit等测试工具。</p><p>l ﻿了解 git、meaven 等项目版本管及构建工具,以及Docker、Nginx、Tomact等服务器软件。</p><h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><p>l <strong>2020.9—2021.2</strong> <strong>基于模板匹配的身份证信息OCR识别</strong></p><p>项目描述：采取到身份证图片以后，首先利用开源软件OPENCV进行图片预处理及倾斜校正等，并且完成归一化。进而实现字符定位与切分，之后选取单一字符与模板进行比较，取相似度最大的为识别结果，识别结束后，输出识别结果，并基于Web技术完成实时在线的检测识别。</p><p>l ﻿<strong>2021.3—2021.10</strong> <strong>扫描式全天空成像仪</strong></p><p>项目描述： ﻿基于海康威视摄像头 SDK,实现对全天空图像的旋转拍摄，拍摄完成之后，使用 SURF实现对图像的拼接。 然后使用 SVM 以及卷积神经网络进行云状识别。然后使用最大类间方差自适应阔值法等实现云量的检测，并结合视频推拉流技术以及Springboot、vue完成系统的部署。</p><p>l <strong>2022.1—2022.5</strong>  <strong>基于特征融合的驾驶员疲劳监测系统设计与开发</strong></p><p>项目描述：项目主要完成的是疲劳驾驶的检测以及报警。基于Retinface完成人脸检测与跟踪，并使用68特征点完成了面部的疲劳特征获取，并结合rPPG方法完成心率的测量。此外结合了yolov4以及面部特征实现了司机分心的检测以及电子围栏设定等。并使用Springboot,Vue、mysql、uniapp实现在网页端以及手机端的实时检测以及报警。</p><h2 id="获奖经历"><a href="#获奖经历" class="headerlink" title="获奖经历"></a>获奖经历</h2><p>l 2017&#x2F;11 国家级 国家励志奖学金</p><p>l 2018&#x2F;11 国家级 国家励志奖学金</p><p>l 2017&#x2F;12 国家级 “五一数学建模竞赛”二等奖</p><p>l 2018&#x2F;3 国家级 “美国数学建模大赛”二等奖</p><p>l 2018&#x2F;12 校级 校机器人大赛总决赛一等奖</p><p>l ﻿2021&#x2F;10校级 研究生三等奖学金；</p><p>l 英语水平：CET4，CET6，能快速阅读并理解英文</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 简历 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 简历 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Springboot初探</title>
       <link href="/2021/06/10/Springboot%E5%88%9D%E6%8E%A2/"/>
       <url>/2021/06/10/Springboot%E5%88%9D%E6%8E%A2/</url>
